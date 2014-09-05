@@ -35,3 +35,10 @@
     )
   )
 )
+
+
+(defun copy-all-to-buffer (buffer)
+  "Copy the content of the current buffer to another buffer"
+  (interactive "BCopy to buffer:")
+  (simplified-append-to-buffer buffer (point-min) (point-max))
+)
