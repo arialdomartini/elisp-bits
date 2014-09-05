@@ -23,3 +23,15 @@
   (goto-char (point-min))
 )
 
+
+(defun simplified-append-to-buffer (buffer start end)
+  "Append to a buffer the text of the selected region"
+  (interactive "BAppend to buffer: \nr")
+
+  (let ((old-buffer (current-buffer)))
+    (save-excursion
+      (set-buffer (get-buffer-create buffer))
+      (insert-buffer-substring old-buffer start end)
+    )
+  )
+)
