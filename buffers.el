@@ -42,3 +42,11 @@
   (interactive "BCopy to buffer:")
   (simplified-append-to-buffer buffer (point-min) (point-max))
 )
+
+
+(defun buffer-exist (buffer)
+  "Tells if a buffer exists. The result is output as a message"
+  (interactive "BBuffer to check:")
+  (if (get-buffer buffer) (message "The buffer %s exists" buffer)  (message "The buffer %s does not exist" buffer)
+   )
+)
