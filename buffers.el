@@ -47,6 +47,21 @@
 (defun buffer-exist (buffer)
   "Tells if a buffer exists. The result is output as a message"
   (interactive "BBuffer to check:")
-  (if (get-buffer buffer) (message "The buffer %s exists" buffer)  (message "The buffer %s does not exist" buffer)
+  (if (get-buffer buffer) (message "The buffer %s exists" buffer)  (Message "The buffer %s does not exist" buffer)
+   )
+)
+
+
+(defun copy-to-buffer (buffer from start)
+  "Replaces the content of buffer with the content of the selected region"
+  (interactive "BCopy to buffer: \nr")
+  (let ((oldbuffer (current-buffer)))
+    (save-excursion
+      (set-buffer (get-buffer-create buffer))
+      (erase-buffer)
+      (save-excursion
+        (insert-buffer-substring oldbuffer from start)
+        )
+      )
    )
 )
