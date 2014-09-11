@@ -101,3 +101,13 @@
     )
   )
 )
+
+
+(defun unless (expr iftrue iffalse)
+  (if (not expr)
+      iftrue
+      iffalse
+  )
+)
+
+(unless t (message "Argument was false") (message "Argument was true"))
