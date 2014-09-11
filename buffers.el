@@ -82,3 +82,18 @@
     )
   )
 )
+
+
+(defun insert-buffer (buffer)
+  "Insert a buffer content after point"
+  (interactive "BInsert from buffer:")
+  (let (start end)
+    (save-excursion
+      (save-excursion
+        (set-buffer buffer)
+        (setq start (point-min) end (point-max))
+      )
+      (insert-buffer-substring buffer start end)
+    )
+  )
+)
