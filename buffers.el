@@ -91,14 +91,16 @@
   (if (not (bufferp buffer)) 
       (setq buffer (get-buffer buffer))
   )
-  (let (start end)
+  (let (start end newmark)
     (save-excursion
       (save-excursion
         (set-buffer buffer)
         (setq start (point-min) end (point-max))
       )
       (insert-buffer-substring buffer start end)
+      (setq newmark (point))
     )
+    (push-mark newmark)
   )
 )
 
