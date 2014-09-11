@@ -65,3 +65,20 @@
       )
    )
 )
+
+(defun copy-all-to-buffer (buffer)
+  "Replace the content of a buffer with the content of the current buffer"
+  (interactive "BCopy to buffer:")
+  (let ( (thisbuffer (current-buffer)) 
+         (begin (point-min)) 
+         (end (point-max))
+       )
+    (save-excursion
+      (set-buffer (get-buffer-create buffer))
+      (erase-buffer)
+      (save-excursion
+        (insert-buffer-substring thisbuffer begin end)
+      )
+    )
+  )
+)
