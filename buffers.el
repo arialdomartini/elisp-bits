@@ -87,6 +87,10 @@
 (defun insert-buffer (buffer)
   "Insert a buffer content after point"
   (interactive "bInsert from buffer:")
+  ;(or (bufferp buffer) (setq buffer (get-buffer buffer)))
+  (if (not (bufferp buffer)) 
+      (setq buffer (get-buffer buffer))
+  )
   (let (start end)
     (save-excursion
       (save-excursion
