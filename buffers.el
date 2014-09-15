@@ -113,3 +113,16 @@
 )
 
 (unless t (message "Argument was false") (message "Argument was true"))
+
+
+(defun what-line ()
+  "Print the current line number in the current buffer"
+  (interactive)
+  (save-restriction
+    (widen)
+    (save-excursion
+      (beginning-of-line)
+      (message "Line %d" (+ 1 (count-lines 1 (point))))
+      )
+    )
+  )
