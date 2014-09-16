@@ -1,4 +1,9 @@
-(car '(one two three four))
+(let ((list '(one two three four)))
+  (let ((head (car list)) (tail (cdr list)))
+    (cons head tail)
+  )
+)
+
 
 (cdr '(one two three four))
 
@@ -17,3 +22,5 @@
        (gazelle antelope zebra)
        (whale dolphin seal)
        ))
+
+
