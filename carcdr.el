@@ -35,12 +35,16 @@
 (listlen '(1 2 3 4))
 
 
-(defun mynthcdr (list n)
+(defun mynthcdr (n list)
   (if (= 0 n)
       list
-    (mynthcdr (cdr list) (- n 1))
+    (mynthcdr (- n 1) (cdr list) )
       )
 )
 
-(mynthcdr '(1 2 3 4 5) 3)
 
+
+
+
+(mynthcdr 3 '(1 2 3 4 5 6))
+(nthcdr   3 '(1 2 3 4 5 6))
