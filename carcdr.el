@@ -55,3 +55,13 @@
     (message "Equal") 
   (message "not equal")
 )
+
+
+(defun cicle (n)
+  (if (eq 0 n)
+      (message "Cicled a lot of times")
+    (cicle (- n 1))
+      )
+)
+
+(cicle 700)
