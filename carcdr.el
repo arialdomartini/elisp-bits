@@ -65,3 +65,14 @@
 )
 
 (cicle 700)
+
+
+(defun nth (n list)
+  (if (eq 0 n)
+      (car list)
+    (nth (- n 1) (cdr list))
+    )
+  )
+
+(nth 6 '(0 1 2 3 4 5 6 7 8 9 0))
+
