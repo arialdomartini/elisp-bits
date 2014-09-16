@@ -67,12 +67,19 @@
 (cicle 700)
 
 
-(defun nth (n list)
+
+(defun nth1 (n list)
   (if (eq 0 n)
       (car list)
     (nth (- n 1) (cdr list))
     )
   )
 
-(nth 6 '(0 1 2 3 4 5 6 7 8 9 0))
+
+(defun nth2 (n list)
+  (car (nthcdr n list))
+  )
+
+(nth1 6 '(0 1 2 3 4 5 6 7 8 9 0))
+(nth2 6 '(0 1 2 3 4 5 6 7 8 9 0))
 
