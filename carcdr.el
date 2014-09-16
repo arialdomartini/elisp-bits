@@ -24,3 +24,12 @@
        ))
 
 
+(length (cons '"a" '("b" "c")))
+
+(defun listlen (list)
+  (if (cdr list)
+      (+ 1 (listlen (cdr list)))
+      1
+      )
+)
+(listlen '(1 2 3 4))
