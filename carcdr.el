@@ -48,3 +48,10 @@
 
 (mynthcdr 3 '(1 2 3 4 5 6))
 (nthcdr   3 '(1 2 3 4 5 6))
+
+
+(if 
+    (eq nil ()) 
+    (message "Equal") 
+  (message "not equal")
+)
