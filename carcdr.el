@@ -33,3 +33,14 @@
       )
 )
 (listlen '(1 2 3 4))
+
+
+(defun mynthcdr (list n)
+  (if (= 0 n)
+      list
+    (mynthcdr (cdr list) (- n 1))
+      )
+)
+
+(mynthcdr '(1 2 3 4 5) 3)
+
