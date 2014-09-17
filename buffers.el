@@ -134,7 +134,7 @@
   ; p "processed prefix": the pregix argument passed with C-u
   (kill-region (point)
         (progn
-          (search-forward (char-to-string char) nil nil N)
+          (search-forward (char-to-string char) (point-max) nil N)
           (point)
         )
   )
