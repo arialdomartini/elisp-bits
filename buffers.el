@@ -127,16 +127,18 @@
     )
   )
 
+(defun goto-nth-occurrence-of-char (char N)
+  (search-forward char (point-max) nil N)
+  (point)
+)
+
 (defun my-zap-to-char (N char)
   "Kill up to (and including) Nth occurrence of the character char"
   (interactive "*p\ncZap to char:")
   ; * give an error if run on a read-only buffer
   ; p "processed prefix": the pregix argument passed with C-u
   (kill-region (point)
-        (progn
-          (search-forward (char-to-string char) (point-max) nil N)
-          (point)
-        )
+        (goto-nth-occurrence-of-char (char-to-string char) N)
   )
 )
 
