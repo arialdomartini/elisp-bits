@@ -35,7 +35,7 @@
 (is-empty '(a b c))
 
 
- 
+
 (is-empty '())
 
 
@@ -78,7 +78,7 @@
   )
 
 (defun has-no-more-than-one-element (list)
-   (eq (cdr list) nil)
+  (eq (cdr list) nil)
   )
 
 
@@ -95,7 +95,7 @@
   (setq first (car lista))
   (setq rest (cdr lista))
   (list lista first)
-     )
+  )
 
 
 (invert '(a b))
@@ -118,3 +118,19 @@
 
 
 
+
+
+(defun revlist (list)
+
+  (defun revlist-acc (list acc)
+    (if list
+      (revlist-acc (cdr list) (cons (car list) acc))
+        acc
+      )
+    )
+
+  (revlist-acc list nil)
+  )
+
+
+(revlist '(1 2 3 5 6 7))
