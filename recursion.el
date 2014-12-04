@@ -134,3 +134,13 @@
 
 
 (revlist '(1 2 3 5 6 7))
+
+
+(defun paolorev (list)
+  (if (eq list ())
+      ()
+    (append (paolorev (cdr list)) (list(car list)))
+      )
+  )
+
+(paolorev '(1 2 3 4 5))
