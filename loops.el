@@ -47,3 +47,25 @@
   )
 
 (square-each '(1 2 3 4 5 6 7 8 9 10))
+
+
+(defun every (list function )
+  (if (not list)
+      nil
+    (cons (funcall function (car list))
+          (every (cdr list) function)
+          )
+    )
+  )
+
+(defun square (n)
+  (* n n)
+  )
+
+(defun plus1 (n)
+  (1+ n)
+  )
+
+(every '(1 2 3 4 5 6) 'square)
+(every '(1 2 3 4 5 6) 'plus1)
+
