@@ -22,3 +22,12 @@
   )
 
 (triangle 10)
+
+(defun recursive-triangle (number-of-rows)
+  (if (eq 1 number-of-rows)
+      1
+    (+ number-of-rows (recursive-triangle (- number-of-rows 1)))
+      )
+  )
+
+(recursive-triangle 30)
