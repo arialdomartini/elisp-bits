@@ -31,3 +31,19 @@
   )
 
 (recursive-triangle 30)
+
+
+(defun square-each (list)
+  (defun square (n)
+    (* n n)
+    )
+
+  (if (not list)
+      nil
+    (cons (square (car list))
+          (square-each (cdr list))
+          )
+      )
+  )
+
+(square-each '(1 2 3 4 5 6 7 8 9 10))
