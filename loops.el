@@ -82,3 +82,20 @@
   )
 
 (filterpositive '(1 2 -3 4 -5 6))
+
+
+(defun keep (function list)
+  (if (not list)
+      nil
+    (if (funcall function (car list))
+        (cons (car list) (keep function (cdr list)))
+      (keep function (cdr list))
+        )
+      )
+  )
+
+(defun ispositive (n)
+  (> n 0)
+  )
+
+(keep 'ispositive '(1 2 -3 4 -5 6))
