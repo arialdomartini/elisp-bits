@@ -69,3 +69,16 @@
 (every '(1 2 3 4 5 6) 'square)
 (every '(1 2 3 4 5 6) 'plus1)
 
+
+
+(defun filterpositive (list)
+  (if (not list)
+      nil
+    (if (> (car list) 0)
+        (cons (car list) (filterpositive (cdr list)))
+      (filterpositive (cdr list))
+        )
+      )
+  )
+
+(filterpositive '(1 2 -3 4 -5 6))
