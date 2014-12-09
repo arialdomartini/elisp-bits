@@ -99,3 +99,16 @@
   )
 
 (keep 'ispositive '(1 2 -3 4 -5 6))
+
+
+(defun triangle-initialization (number)
+  (triangle-recursive-helper 0 0 number))
+
+(defun triangle-recursive-helper (sum counter number)
+  (if (> counter number)
+      sum
+    (triangle-recursive-helper (+ sum counter) (+ counter 1) number)
+      )
+  )
+
+(triangle-initialization 3)
