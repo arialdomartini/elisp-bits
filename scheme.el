@@ -69,3 +69,24 @@
 
 (recur (lambda (x) (doublen x)) '(1 2 3 4))
 (recur 'doublen '(1 2 3 4))
+
+
+(defun sum (lat)
+  (cond
+   ((eq lat ()) 0)
+   (t (+ (car lat) (sum (cdr lat))))
+   )
+  )
+
+
+(sum '(1 2 3 4 5))
+
+
+(defun maxl (lat)
+  (cond
+   ((eq (cdr lat) ()) (car lat))
+   (t (max (car lat) (maxl (cdr lat))))
+   )
+  )
+
+(maxl '(1 2 3 4 5 6 5))
